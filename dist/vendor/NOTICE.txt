@@ -1,0 +1,6 @@
+MediaPipe Tasks Vision 0.10.22-rc.20250304, by Google.
+https://github.com/google-ai-edge/mediapipe
+Distributed under the Apache License, Version 2.0. See LICENSE.txt.
+
+Hand Landmarker float16 model, version 1, distributed by Google.
+https://developers.google.com/edge/mediapipe/solutions/vision/hand_landmarker

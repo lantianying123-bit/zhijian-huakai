@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb">
+  <meta name="description" content="用拇指与食指之间的距离，控制花朵从花苞到盛放。">
+  <title>指间花开</title>
+  <link rel="icon" href="./assets/flower.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <div>
+        <div class="eyebrow"><img src="./assets/flower.svg" alt=""> 花与手势</div>
+        <h1>指间花开</h1>
+        <p class="wish">所有看见昙花盛开的人都会好运</p>
+      </div>
+      <p>用同一只手的拇指和食指控制花朵。<br>两指分开，花就绽放；捏合时，它会收回花苞。</p>
+    </header>
+
+    <section class="stage" aria-label="花朵影像">
+      <div class="film">
+        <div class="flower-frame" aria-hidden="true">
+          <video id="flower" src="./assets/bloom.mp4" preload="auto" muted playsinline></video>
+          <div class="flower-light"></div>
+        </div>
+      </div>
+      <p class="stage-message" id="stage-message" role="status" hidden>花朵影像加载失败，请刷新网页。</p>
+      <div class="camera-preview" id="camera-preview" hidden aria-hidden="true">
+        <video id="camera" autoplay muted playsinline></video>
+        <canvas id="markers"></canvas>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="开合控制">
+      <div class="scrub">
+        <div class="scrub-heading">
+          <label for="aperture">开合程度</label>
+          <output id="amount" for="aperture">0%</output>
+        </div>
+        <input id="aperture" type="range" min="0" max="100" value="0" step="1">
+        <div class="endpoints" aria-hidden="true"><span>花苞</span><span>盛放</span></div>
+      </div>
+      <div class="camera-controls">
+        <button id="camera-toggle" type="button" aria-pressed="false">
+          <span class="camera-icon" aria-hidden="true"></span><span id="button-label">开启摄像头</span>
+        </button>
+        <p id="camera-status" data-state="off" role="status">摄像头关闭，可拖动滑杆体验。</p>
+      </div>
+    </section>
+    <footer>摄像头画面仅在你的浏览器中处理。</footer>
+  </main>
+</body>
+</html>
